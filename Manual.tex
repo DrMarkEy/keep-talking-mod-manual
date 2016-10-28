@@ -16,6 +16,8 @@
 \usepackage{mathtools}
 \usepackage{subfigure}
 \usepackage{pdfpages}
+\usepackage[abs]{overpic}
+\usepackage{pict2e}
 
 
 
@@ -26,100 +28,765 @@
 
 %Preface
  \includepdf[pages=1-3]{pdf/sections.pdf}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
 \newpage
 
 %section{Keys}
- \includepdf[pages=4]{pdf/sections.pdf}
- \includepdf[pages=-]{pdf/timing/TurnTheKey.pdf}
+
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=4]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont K}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/timing/TurnTheKey.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont K}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=2]{pdf/timing/TurnTheKey.pdf}
+\end{overpic}
+}
 
 %\section{Electronics}
- \includepdf[pages=5]{pdf/sections.pdf}
- \includepdf[pages=5]{pdf/vanilla.pdf}
- \includepdf[pages=13-14]{pdf/vanilla.pdf}
- \includepdf[pages=-]{pdf/electronics/resistors.pdf}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=5]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont W}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=5]{pdf/vanilla.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont W}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=13]{pdf/vanilla.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=14]{pdf/vanilla.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont W}}
+    \put(165,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
  \includepdf[pages=-]{pdf/electronics/Probing.pdf}
- \includepdf[pages=-]{pdf/electronics/microcontroller.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/electronics/FollowTheLeader.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont W}}
+\end{overpic}
+}
+
+ \includepdf[pages=2]{pdf/electronics/FollowTheLeader.pdf}
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm, page=1]{pdf/electronics/resistors.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont W}}
+\end{overpic}
+}
+\newpage
+ \includepdf[pages=2]{pdf/electronics/resistors.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm, page=1]{pdf/electronics/microcontroller.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont W}}
+\end{overpic}
+}
+\newpage
+ \includepdf[pages=2]{pdf/electronics/microcontroller.pdf}
+
+
+
 
 %\section{4 Buttons}
- \includepdf[pages=6]{pdf/sections.pdf}
- \includepdf[pages=7-8]{pdf/vanilla.pdf}
- \includepdf[pages=11]{pdf/vanilla.pdf}
- \includepdf[pages=-]{pdf/4buttons/alphabet.pdf}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=6]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont 4}}
+\end{overpic}
+}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm, page=7]{pdf/vanilla.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont 4}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/4buttons/alphabet.pdf}
+    \put(160,20){\includegraphics{attention.png}}
+    \put(30,30){{\fontsize{90}{100}\selectfont 4}}
+\end{overpic}
+}
+
+
  \includepdf[pages=-]{pdf/4buttons/LetteredKeys.pdf}
- \includepdf[pages=8-9]{pdf/advanced.pdf}
- \includepdf[pages=-]{pdf/4buttons/MonsplodeFightManual.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=8]{pdf/vanilla.pdf}
+    \put(160,20){\includegraphics{attention.png}}
+    \put(30,30){{\fontsize{90}{100}\selectfont 4}}
+\end{overpic}
+}
+
+
+\newpage
+ \includepdf[pages=11]{pdf/vanilla.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=8]{pdf/advanced.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont 4}}
+\end{overpic}
+}
+
+\newpage
+\includepdf[pages=9]{pdf/advanced.pdf}
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/4buttons/MonsplodeFightManual.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont 4}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2-3]{pdf/4buttons/MonsplodeFightManual.pdf}
+
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
 
 %\section{> 6 Buttons}
- \includepdf[pages=7]{pdf/sections.pdf}
- \includepdf[pages=-]{pdf/6buttons/emojiMath.pdf}
- \includepdf[pages=-]{pdf/6buttons/TicTacToe.pdf}
- \includepdf[pages=-]{pdf/6buttons/SlidingPuzzle01.pdf}
- \includepdf[pages=1]{pdf/advanced.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=7]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont >6}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/6buttons/emojiMath.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont >6}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=-]{pdf/6buttons/twoBits.pdf}
- \includepdf[pages=-]{pdf/6buttons/ChessModule.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/6buttons/TicTacToe.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont >6}}
+\end{overpic}
+}
+
+\newpage
+\includepdf[pages=2]{pdf/6buttons/TicTacToe.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/6buttons/SlidingPuzzle01.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont >6}}
+\end{overpic}
+}
+
+\newpage
+\includepdf[pages=2]{pdf/6buttons/SlidingPuzzle01.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=0.9,unit=1mm,page=1]{pdf/6buttons/ChessModule.pdf}
+    \put(0,10){{\fontsize{90}{100}\selectfont >6}}
+\end{overpic}
+}
+
+\newpage
+\includepdf[pages=2]{pdf/6buttons/ChessModule.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/advanced.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont >6}}
+\end{overpic}
+}
+
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
 
 %\section{Text}
- \includepdf[pages=8]{pdf/sections.pdf}
- \includepdf[pages=-]{pdf/text/ceasarCipher.pdf}
- \includepdf[pages=-]{pdf/text/anagrams.pdf}
- \includepdf[pages=9-10]{pdf/vanilla.pdf}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=8]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont T}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/text/anagrams.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont >6 / T}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/text/anagrams.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/text/ceasarCipher.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont >6 / T}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+
+\newpage
  \includepdf[pages=-]{pdf/text/Cryptography.pdf}
- \includepdf[pages=-]{pdf/text/CrazyTalk.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=9]{pdf/vanilla.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont T}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=10]{pdf/vanilla.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/text/CrazyTalk.pdf}
+    \put(10,30){{\fontsize{90}{100}\selectfont T}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/text/CrazyTalk.pdf}
 
 %\section{See Through}
- \includepdf[pages=9]{pdf/sections.pdf}
- \includepdf[pages=16]{pdf/vanilla.pdf}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=9]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont S}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=16]{pdf/vanilla.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont T / S}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=12]{pdf/vanilla.pdf}
- \includepdf[pages=-]{pdf/seethrough/Murder.pdf}
- \includepdf[pages=6-7]{pdf/advanced.pdf}
- \includepdf[pages=-]{pdf/seethrough/AdventureGame.pdf}
- \includepdf[pages=-]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
- \includepdf[pages=-]{pdf/seethrough/semaphore.pdf}
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=6]{pdf/advanced.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont S}}
+\end{overpic}
+}
+
+
+\newpage
+ \includepdf[pages=7]{pdf/advanced.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/Murder.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont S}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/seethrough/Murder.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/AdventureGame.pdf}
+    \put(30,10){{\fontsize{90}{100}\selectfont S}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/seethrough/AdventureGame.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
+    \put(10,30){{\fontsize{90}{100}\selectfont S}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2-3]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/semaphore.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont S}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/seethrough/semaphore.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/seethrough/friendship.pdf}
+    \put(20,60){{\fontsize{90}{100}\selectfont S}}
+\end{overpic}
+}
+
+
 
 %\section{Boolean}
- \includepdf[pages=10]{pdf/sections.pdf}
- \includepdf[pages=-]{pdf/boolean/colourflash.pdf}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=10]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont B}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=0.9,unit=1mm,page=1]{pdf/boolean/colourflash.pdf}
+    \put(10,10){{\fontsize{90}{100}\selectfont B}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/boolean/colourflash.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/boolean/Logic.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont B}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=-]{pdf/boolean/SillySlots.pdf}
- \includepdf[pages=-]{pdf/boolean/ConnectionCheckManual.pdf}
- \includepdf[pages=-]{pdf/boolean/Logic.pdf}
- \includepdf[pages=-]{pdf/boolean/switches.pdf}
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/boolean/ConnectionCheckManual.pdf}
+    \put(30,10){{\fontsize{90}{100}\selectfont B}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/boolean/ConnectionCheckManual.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/boolean/switches.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont B}}
+\end{overpic}
+}
+
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
 
 %\section{Expert}
- \includepdf[pages=11]{pdf/sections.pdf}
- \includepdf[pages=-]{pdf/expert/NumberPad.pdf}
- \includepdf[pages=-]{pdf/expert/3DMazeManual.pdf}
- \includepdf[pages=2-5]{pdf/advanced.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=11]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont E}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/expert/NumberPad.pdf}
+    \put(0,0){{\fontsize{90}{100}\selectfont E}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/expert/NumberPad.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/expert/3DMazeManual.pdf}
+    \put(10,30){{\fontsize{90}{100}\selectfont E}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2-3]{pdf/expert/3DMazeManual.pdf}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=2]{pdf/advanced.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont E}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=3]{pdf/advanced.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=4]{pdf/advanced.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont E}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=5]{pdf/advanced.pdf}
+
 
 %\section{Other}
- \includepdf[pages=12]{pdf/sections.pdf}
- \includepdf[pages=6]{pdf/vanilla.pdf}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=12]{pdf/sections.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont O}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=6]{pdf/vanilla.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont O}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=15]{pdf/vanilla.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/other/ShapeShift.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont O}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=1]{pdf/other/GamePad.pdf}
- \includepdf[pages=-]{pdf/other/ShapeShift.pdf}
- \includepdf[pages=-]{pdf/other/PerspectivePegsManual.pdf}
- \includepdf[pages=-]{pdf/other/OrientationCube.pdf}
- \includepdf[pages=-]{pdf/other/pianoKeys.pdf}
- \includepdf[pages=-]{pdf/other/Listening.pdf}
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/other/PerspectivePegsManual.pdf}
+    \put(10,30){{\fontsize{90}{100}\selectfont O}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/other/PerspectivePegsManual.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=0.8,unit=1mm,page=1]{pdf/other/OrientationCube.pdf}
+    \put(30,30){{\fontsize{90}{100}\selectfont O}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/other/OrientationCube.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/other/pianoKeys.pdf}
+    \put(30,10){{\fontsize{90}{100}\selectfont O}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2]{pdf/other/pianoKeys.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=0.8,unit=1mm]{pdf/other/Listening.pdf}
+    \put(160,50){\includegraphics{attention.png}}
+    \put(30,50){{\fontsize{90}{100}\selectfont O}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=-]{pdf/other/combinationLock.pdf}
- \includepdf[pages=-]{pdf/other/Astrology.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/other/Astrology.pdf}
+ \put(30,20){{\fontsize{90}{100}\selectfont O}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=2-3]{pdf/other/Astrology.pdf}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
 
 %\section{Needy}
- \includepdf[pages=13]{pdf/sections.pdf}
- \includepdf[pages=17-20]{pdf/vanilla.pdf}
- \includepdf[pages=-]{pdf/needy/filibuster.pdf}
- \includepdf[pages=-]{pdf/needy/lightsOut.pdf}
- \includepdf[pages=-]{pdf/needy/TetrisManual.pdf}
- \includepdf[pages=-]{pdf/needy/motionsense.pdf}
- \includepdf[pages=-]{pdf/needy/MonsplodeWhoManual.pdf}
- \includepdf[pages=10-11]{pdf/advanced.pdf}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=13]{pdf/sections.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont N}}
+\end{overpic}
+}
 
-\section{Appendix}
- \includepdf[pages=21-23]{pdf/vanilla.pdf}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=18]{pdf/vanilla.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont N}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=19]{pdf/vanilla.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=20]{pdf/vanilla.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont N}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=-]{pdf/needy/filibuster.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/needy/lightsOut.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont N}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=-]{pdf/needy/TetrisManual.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/needy/motionsense.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont N}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=-]{pdf/needy/MonsplodeWhoManual.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=10]{pdf/advanced.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont N}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=11]{pdf/advanced.pdf}
+
+
+%\section{Appendix}
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=21]{pdf/vanilla.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont A}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=22]{pdf/vanilla.pdf}
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=23]{pdf/vanilla.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont A}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=-]{pdf/appendix/TwoFactor.pdf}
- \includepdf[pages=12]{pdf/advanced.pdf}
- \includepdf[pages=-]{pdf/appendix/AppendixCD43.pdf}
- \includepdf[pages=-]{pdf/appendix/AppendixCD44.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=12]{pdf/advanced.pdf}
+    \put(30,20){{\fontsize{90}{100}\selectfont A}}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
  \includepdf[pages=2]{pdf/other/GamePad.pdf}
+
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm]{pdf/appendix/AppendixCD43.pdf}
+    \put(10,20){{\fontsize{90}{100}\selectfont A}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=-]{pdf/appendix/AppendixCD44.pdf}
 \end{document}
 
 
