@@ -18,13 +18,16 @@
 \usepackage{pdfpages}
 \usepackage[abs]{overpic}
 \usepackage{pict2e}
-
-
-
 \usepackage[fixlanguage]{babelbib}
 
+\usepackage{fontspec}
+\setmainfont{Special Elite}
+
 \begin{document}
-%\tableofcontents
+
+
+
+\tableofcontents
 
 %Preface
  \includepdf[pages=1-3]{pdf/sections.pdf}
@@ -35,7 +38,7 @@
 
 \newpage
 
-%section{Keys}
+\section*{K: Keys}
 
 \vspace*{-4cm}
 \centerline{
@@ -64,7 +67,7 @@
 \end{overpic}
 }
 
-%\section{Electronics}
+\section*{W: Wires, Electronics}
 \newpage
 \vspace*{-4cm}
 \centerline{
@@ -134,7 +137,7 @@
 
 
 
-%\section{4 Buttons}
+\section*{4: Four symmetrical Buttons}
 \newpage
 \vspace*{-4cm}
 \centerline{
@@ -213,7 +216,7 @@
 \thispagestyle{empty}
 \mbox{}
 
-%\section{> 6 Buttons}
+\section{>6: More than six Buttons}
 
 \newpage
 \vspace*{-4cm}
@@ -280,10 +283,8 @@
 \end{overpic}
 }
 
-
 \newpage
-\thispagestyle{empty}
-\mbox{}
+\includepdf[pages=-]{pdf/6buttons/ForeignExchangeRates.pdf}
 
 %\section{Text}
 \newpage
