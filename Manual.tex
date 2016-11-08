@@ -23,6 +23,34 @@
 \usepackage{layout}
 
 
+\usepackage{ltxcmds}
+\makeatletter
+\newcommand*{\getdata}[2]{%
+  \expandafter\ltx@CarNumth\expandafter{%
+    \the\numexpr(#1)\expandafter
+  }#2\@nil
+}
+\makeatother
+
+\newcommand*{\ktaneChapterNames}{{F}{W}{4}{>6}{T}{S}{B}{E}{O}{N}{A}}
+
+
+
+% make @ a letter so we can use it in names of command sequences:
+\makeatletter
+% call the internal \c@<counter> command and apply number formatting:
+\newcommand*\ktaneChapter[1]{\expandafter\@ktaneChapter\csname c@#1\endcsname}
+% number formatting:
+\newcommand*\@ktaneChapter[1]{\getdata{\the\numexpr(#1)}\ktaneChapterNames\relax}
+
+% make @ other again:
+\makeatother
+
+\renewcommand\thesection{\ktaneChapter{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+
+\renewcommand\headrule{}
+
 \newcommand\invisiblesection[1]{%
   \cleardoublepage
   \refstepcounter{section}%
@@ -48,18 +76,23 @@
 
 \tableofcontents
 
-\invisiblesection{K: Keys}
-
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=4]{pdf/sections.pdf}
-\end{overpic}
-}
-
+\invisiblesection{Few Modules}
+ \includepdf[scale=0.9,pages=4,pagecommand={}]{pdf/sections.pdf}
 
 \newpage
 \thispagestyle{empty}
 \mbox{}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=6]{pdf/vanilla.pdf}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/timing/BlindAlley.pdf}
 
 \newpage
 \vspace*{-4cm}
@@ -70,16 +103,10 @@
 }
 
 \newpage
+ \includepdf[pages=2,pagecommand={}]{pdf/timing/TurnTheKey.pdf}
 
- \includepdf[pages=2]{pdf/timing/TurnTheKey.pdf}
-
-\invisiblesection{W: Wires, Electronics}
-
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=5]{pdf/sections.pdf}
-\end{overpic}
-}
+\invisiblesection{Wires, Electronics}
+ \includepdf[scale=0.9,pages=5,pagecommand={}]{pdf/sections.pdf}
 
 \newpage
 \thispagestyle{empty}
@@ -95,7 +122,7 @@
 
 
 \newpage
- \includepdf[pages=13]{pdf/vanilla.pdf}
+ \includepdf[pages=13,pagecommand={}]{pdf/vanilla.pdf}
 
 \newpage
 \vspace*{-4cm}
@@ -105,45 +132,21 @@
 \end{overpic}
 }
 
-
- \includepdf[pages=-]{pdf/electronics/Probing.pdf}
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/electronics/Probing.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/electronics/FollowTheLeader.pdf}
-\end{overpic}
-}
-
- \includepdf[scale=1,pages=2]{pdf/electronics/FollowTheLeader.pdf}
+ \includepdf[scale=1,pages=-,pagecommand={}]{pdf/electronics/FollowTheLeader.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/electronics/resistors.pdf}
-\end{overpic}
-}
-
- \includepdf[scale=1,pages=2]{pdf/electronics/resistors.pdf}
+ \includepdf[scale=1,pages=-,pagecommand={}]{pdf/electronics/resistors.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/electronics/microcontroller.pdf}
-\end{overpic}
-}
-
- \includepdf[scale=1,pages=2]{pdf/electronics/microcontroller.pdf}
-
+ \includepdf[scale=1,pages=-,pagecommand={}]{pdf/electronics/microcontroller.pdf}
 
 \newpage
-
-\invisiblesection{4: Four symmetrical Buttons}
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=6]{pdf/sections.pdf}
-\end{overpic}
-}
+\invisiblesection{Four symmetrical Buttons}
+ \includepdf[scale=1,pages=6,pagecommand={}]{pdf/sections.pdf}
 
 
 \newpage
@@ -154,14 +157,14 @@
 \newpage
 \vspace*{-4cm}
 \centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=7]{pdf/vanilla.pdf}
+\begin{overpic}[scale=1.0,page=7,unit=1mm]{pdf/vanilla.pdf}
+    \put(160,20){\includegraphics{attention.png}}
 \end{overpic}
 }
 
-
 \newpage
-\thispagestyle{empty}
-\mbox{}
+ \includepdf[scale=1,pages=15,pagecommand={}]{pdf/vanilla.pdf}
+
 
 \newpage
 \vspace*{-4cm}
@@ -171,8 +174,8 @@
 \end{overpic}
 }
 
-
- \includepdf[pages=-]{pdf/4buttons/LetteredKeys.pdf}
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/4buttons/LetteredKeys.pdf}
 
 \newpage
 \vspace*{-4cm}
@@ -184,43 +187,20 @@
 
 
 \newpage
- \includepdf[pages=11]{pdf/vanilla.pdf}
+ \includepdf[pages=11,pagecommand={}]{pdf/vanilla.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=8]{pdf/advanced.pdf}
-\end{overpic}
-}
-
-\includepdf[pages=9]{pdf/advanced.pdf}
+\includepdf[scale=0.9,pages=8-9,pagecommand={}]{pdf/advanced.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/4buttons/MonsplodeFightManual.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/4buttons/MonsplodeFightManual.pdf}
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=3]{pdf/4buttons/MonsplodeFightManual.pdf}
-\end{overpic}
-}
+ \includepdf[scale=0.9,pages=-,pagecommand={}]{pdf/4buttons/MonsplodeFightManual.pdf}
 
 \newpage
 \thispagestyle{empty}
 \mbox{}
 
-\invisiblesection{>6: More than six Buttons}
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=7]{pdf/sections.pdf}
-\end{overpic}
-}
-
-
+\invisiblesection{More than six Buttons}
+\includepdf[pages=7,pagecommand={}]{pdf/sections.pdf}
 
 \newpage
 \thispagestyle{empty}
@@ -235,35 +215,16 @@
 }
 
 \newpage
- \includepdf[pages=-]{pdf/6buttons/twoBits.pdf}
+ \includepdf[pages=1,pagecommand={}]{pdf/other/GamePad.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/6buttons/TicTacToe.pdf}
-    \put(160,20){\includegraphics{attention.png}}
-\end{overpic}
-}
-
- \includepdf[pages=2]{pdf/6buttons/TicTacToe.pdf}
+ \includepdf[pages=-,pagecommand={}]{pdf/6buttons/TicTacToe.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/6buttons/SlidingPuzzle01.pdf}
-    \put(160,20){\includegraphics{attention.png}}
-\end{overpic}
-}
-\includepdf[pages=2]{pdf/6buttons/SlidingPuzzle01.pdf}
+\includepdf[pages=-,pagecommand={}]{pdf/6buttons/SlidingPuzzle01.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.85,unit=1mm,page=1]{pdf/6buttons/ChessModule.pdf}
-    \put(160,20){\includegraphics{attention.png}}
-\end{overpic}
-}
-\includepdf[pages=2]{pdf/6buttons/ChessModule.pdf}
+\includepdf[scale=0.9,pages=-,pagecommand={}]{pdf/6buttons/ChessModule.pdf}
 
 \newpage
 \vspace*{-4cm}
@@ -274,7 +235,22 @@
 }
 
 \newpage
-\includepdf[pages=-]{pdf/6buttons/ForeignExchangeRates.pdf}
+\includepdf[pages=-,pagecommand={}]{pdf/6buttons/ForeignExchangeRates.pdf}
+
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/other/pianoKeys.pdf}
+
+\newpage
+\invisiblesection{Text}
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=0.9,unit=1mm,page=8]{pdf/sections.pdf}
+\end{overpic}
+}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
 
 \newpage
 \vspace*{-4cm}
@@ -285,25 +261,49 @@
 }
 
 \newpage
- \includepdf[pages=2]{pdf/text/anagrams.pdf}
+ \includepdf[pages=2,pagecommand={}]{pdf/text/anagrams.pdf} 
 
 \newpage
 \vspace*{-4cm}
 \centerline{
 \begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/text/ceasarCipher.pdf}
+    \put(160,20){\includegraphics{attention.png}}
 \end{overpic}
 }
 
+\newpage
+ \includepdf[scale=1.0,pages=-,pagecommand={}]{pdf/text/Cryptography.pdf}
 
 \newpage
-\thispagestyle{empty}
-\mbox{}
+ \includepdf[pages=9-10,pagecommand={}]{pdf/vanilla.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=0.9,unit=1mm,page=1]{pdf/text/CrazyTalk.pdf}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[scale=0.9,pages=-,pagecommand={}]{pdf/6buttons/twoBits.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/text/SeaShells.pdf}
+    \put(160,20){\includegraphics{attention.png}}
+\end{overpic}
+}
+
+\newpage
+ \includepdf[scale=0.9,pages=-,pagecommand={}]{pdf/text/EnglishTest.pdf}
 
 \newpage
 \invisiblesection{See Through}
 \vspace*{-4cm}
 \centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=8]{pdf/sections.pdf}
+\begin{overpic}[scale=0.9,unit=1mm,page=9]{pdf/sections.pdf}
 \end{overpic}
 }
 
@@ -320,89 +320,43 @@
 }
 
 \newpage
- \includepdf[pages=12]{pdf/vanilla.pdf}
+ \includepdf[pages=12,pagecommand={}]{pdf/vanilla.pdf}
+
+\newpage
+ \includepdf[pages=6-7,pagecommand={}]{pdf/advanced.pdf}
+
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/seethrough/Murder.pdf}
+
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/seethrough/AdventureGame.pdf}
+
+\newpage
+ \includepdf[scale=1.0,pages=1-2,pagecommand={}]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
 
 \newpage
 \vspace*{-4cm}
 \centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=6]{pdf/advanced.pdf}
-\end{overpic}
-}
-
- \includepdf[pages=7]{pdf/advanced.pdf}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/Murder.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/seethrough/Murder.pdf}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/AdventureGame.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/seethrough/AdventureGame.pdf}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=3]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
+\begin{overpic}[scale=0.85,unit=1mm,page=3]{pdf/seethrough/OnTheSubjectofLaundry.pdf}
+    \put(160,20){\includegraphics{attention.png}}
 \end{overpic}
 }
 
 \newpage
-\thispagestyle{empty}
-\mbox{}
+ \includepdf[scale=0.9,pages=-,pagecommand={}]{pdf/seethrough/friendship.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/seethrough/semaphore.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/seethrough/semaphore.pdf}
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=1]{pdf/seethrough/friendship.pdf}
-\end{overpic}
-}
-
-\newpage
-\thispagestyle{empty}
-\mbox{}
-
+ \includepdf[pages=-,pagecommand={}]{pdf/seethrough/semaphore.pdf}
 
 \invisiblesection{Boolean}
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=9]{pdf/sections.pdf}
-\end{overpic}
-}
+ \includepdf[pages=10,pagecommand={}]{pdf/sections.pdf}
 
 \newpage
 \thispagestyle{empty}
 \mbox{}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=1]{pdf/boolean/colourflash.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/boolean/colourflash.pdf}
+ \includepdf[scale=0.9,pages=-,pagecommand={}]{pdf/boolean/colourflash.pdf}
 
 \newpage
 \vspace*{-4cm}
@@ -413,65 +367,34 @@
 }
 
 \newpage
- \includepdf[pages=-]{pdf/boolean/SillySlots.pdf}
+ \includepdf[pages=-,pagecommand={}]{pdf/boolean/SillySlots.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/boolean/ConnectionCheckManual.pdf}
-    \put(180,30){\includegraphics{attention.png}}
-\end{overpic}
-}
-
- \includepdf[pages=2]{pdf/boolean/ConnectionCheckManual.pdf}
+ \includepdf[pages=-,pagecommand={}]{pdf/boolean/ConnectionCheckManual.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.95,unit=1mm,page=1]{pdf/boolean/switches.pdf}
-    \put(180,30){\includegraphics{attention.png}}
-\end{overpic}
-}
+ \includepdf[pages=-,pagecommand={}]{pdf/boolean/TheBulb.pdf}
 
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/boolean/switches.pdf}
 
 \newpage
 \thispagestyle{empty}
 \mbox{}
+
 
 \invisiblesection{Expert}
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=10]{pdf/sections.pdf}
-\end{overpic}
-}
+ \includepdf[pages=11,pagecommand={}]{pdf/sections.pdf}
 
 \newpage
 \thispagestyle{empty}
 \mbox{}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.95,unit=1mm,page=1]{pdf/expert/NumberPad.pdf}
-\end{overpic}
-}
-\newpage
- \includepdf[pages=2]{pdf/expert/NumberPad.pdf}
+ \includepdf[scale=0.95,pages=-,pagecommand={}]{pdf/expert/NumberPad.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/expert/3DMazeManual.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/expert/3DMazeManual.pdf}
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=3]{pdf/expert/3DMazeManual.pdf}
-\end{overpic}
-}
-
+ \includepdf[pages=-,pagecommand={}]{pdf/expert/3DMazeManual.pdf}
 
 \newpage
 \thispagestyle{empty}
@@ -486,62 +409,24 @@
 }
 
 \newpage
- \includepdf[pages=3]{pdf/advanced.pdf}
+ \includepdf[pages=3,pagecommand={}]{pdf/advanced.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=4]{pdf/advanced.pdf}
-\end{overpic}
-}
+ \includepdf[pages=4-5,pagecommand={}]{pdf/advanced.pdf}
 
 \newpage
- \includepdf[pages=5]{pdf/advanced.pdf}
-
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/expert/CruelPianoKeys.pdf}
-\end{overpic}
-}
-
-\newpage
- \includepdf[pages=2]{pdf/expert/CruelPianoKeys.pdf}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=3]{pdf/expert/CruelPianoKeys.pdf}
-\end{overpic}
-}
+ \includepdf[pages=-,pagecommand={}]{pdf/expert/CruelPianoKeys.pdf}
 
 \newpage
 \thispagestyle{empty}
 \mbox{}
 
 \invisiblesection{Other}
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=11]{pdf/sections.pdf}
-\end{overpic}
-}
-
+ \includepdf[pages=12,pagecommand={}]{pdf/sections.pdf}
 
 \newpage
 \thispagestyle{empty}
 \mbox{}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=6]{pdf/vanilla.pdf}
-    \put(160,20){\includegraphics{attention.png}}
-\end{overpic}
-}
-
-\newpage
- \includepdf[pages=15]{pdf/vanilla.pdf}
 
 \newpage
 \vspace*{-4cm}
@@ -552,33 +437,13 @@
 }
 
 \newpage
- \includepdf[pages=1]{pdf/other/GamePad.pdf}
+ \includepdf[pages=-,pagecommand={}]{pdf/other/MouseInTheMaze.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/other/PerspectivePegsManual.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/other/PerspectivePegsManual.pdf}
+ \includepdf[pages=-,pagecommand={}]{pdf/other/PerspectivePegsManual.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.6,unit=1mm,page=1]{pdf/other/OrientationCube.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/other/OrientationCube.pdf}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/other/pianoKeys.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/other/pianoKeys.pdf}
-
-
+\includepdf[pages=-,pagecommand={}]{pdf/other/OrientationCube.pdf}
 
 \newpage
 \vspace*{-4cm}
@@ -589,73 +454,30 @@
 }
 
 \newpage
- \includepdf[pages=-]{pdf/other/combinationLock.pdf}
+ \includepdf[scale=0.9,pages=-]{pdf/other/combinationLock.pdf}
 
+\newpage
+ \includepdf[pages=1-2,pagecommand={}]{pdf/other/Astrology.pdf}
 
 \newpage
 \vspace*{-4cm}
 \centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/other/Astrology.pdf}
-\end{overpic}
-}
- \includepdf[pages=2]{pdf/other/Astrology.pdf}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=3]{pdf/other/Astrology.pdf}
-\end{overpic}
-}
-
-
-\newpage
-\thispagestyle{empty}
-\mbox{}
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=9]{pdf/vanilla.pdf}
-\end{overpic}
-}
- \includepdf[pages=10]{pdf/vanilla.pdf}
-
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=0.85,unit=1mm,page=1]{pdf/text/CrazyTalk.pdf}
-\end{overpic}
-}
-\newpage
- \includepdf[pages=2]{pdf/text/CrazyTalk.pdf}
-
-
-\newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/text/Cryptography.pdf}
-    \put(160,20){\includegraphics{attention.png}}
+\begin{overpic}[scale=1.0,page=3,unit=1mm]{pdf/other/Astrology.pdf}
+    \put(160,50){\includegraphics{attention.png}}
 \end{overpic}
 }
 
 \newpage
- \includepdf[pages=-]{pdf/other/MouseInTheMaze.pdf}
+ \includepdf[pages=12]{pdf/vanilla.pdf}
 
 \newpage
-\vspace*{-4cm}
-\centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=1]{pdf/other/SkewedSlots.pdf}
-\end{overpic}
-}
-\newpage
- \includepdf[pages=2]{pdf/other/SkewedSlots.pdf}
+ \includepdf[pages=1-2,pagecommand={}]{pdf/other/SkewedSlots.pdf}
 
 
 \invisiblesection{Needy}
 \vspace*{-4cm}
 \centerline{
-\begin{overpic}[scale=0.9,unit=1mm,page=11]{pdf/sections.pdf}
+\begin{overpic}[scale=0.9,unit=1mm,page=13]{pdf/sections.pdf}
 \end{overpic}
 }
 
@@ -718,15 +540,19 @@
 \newpage
  \includepdf[pages=11]{pdf/advanced.pdf}
 
-\newpage
+
+\invisiblesection{Appendix}
 \vspace*{-4cm}
 \centerline{
-\begin{overpic}[scale=1.0,unit=1mm,page=11]{pdf/sections.pdf}
+\begin{overpic}[scale=0.9,unit=1mm,page=14]{pdf/sections.pdf}
 \end{overpic}
 }
 
+\newpage
+\thispagestyle{empty}
+\mbox{}
 
-\invisiblesection{Appendix}
+\newpage
 \vspace*{-4cm}
 \centerline{
 \begin{overpic}[scale=0.9,unit=1mm,page=21]{pdf/vanilla.pdf}
@@ -752,6 +578,17 @@
 \newpage
 \vspace*{-4cm}
 \centerline{
+\begin{overpic}[scale=0.95,unit=1mm,page=1]{pdf/appendix/AppendixCD43.pdf}
+\end{overpic}
+}
+ \includepdf[pages=-]{pdf/appendix/AppendixCD44.pdf}
+
+\newpage
+ \includepdf[pages=-,pagecommand={}]{pdf/appendix/EnglishTest.pdf}
+
+\newpage
+\vspace*{-4cm}
+\centerline{
 \begin{overpic}[scale=1.0,unit=1mm,page=12]{pdf/advanced.pdf}
     \put(160,20){\includegraphics{attention.png}}
 \end{overpic}
@@ -761,15 +598,12 @@
  \includepdf[pages=2]{pdf/other/GamePad.pdf}
 
 \newpage
- \includepdf[pages=3]{pdf/other/SkewedSlots.pdf}
+\vspace*{-4cm}
+\centerline{
+\begin{overpic}[scale=1.0,unit=1mm,page=3]{pdf/other/SkewedSlots.pdf}
+\end{overpic}
+}
 
-
-\newpage
-\thispagestyle{empty}
-\mbox{}
-
- \includepdf[pages=-]{pdf/appendix/AppendixCD43.pdf}
- \includepdf[pages=-]{pdf/appendix/AppendixCD44.pdf}
 
 \end{document}
 
